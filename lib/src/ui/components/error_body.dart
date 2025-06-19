@@ -33,7 +33,7 @@ class ErrorBody extends ConsumerWidget {
         Center(
           child: Text(
             message,
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
         const SizedBox(height: 12),

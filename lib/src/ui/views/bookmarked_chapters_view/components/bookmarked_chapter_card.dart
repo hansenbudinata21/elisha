@@ -17,10 +17,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/models/chapter.dart';
 import 'package:elisha/src/ui/views/bookmarked_chapter_view/bookmarked_chapter_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BookmarkedChapterCard extends ConsumerWidget {
   const BookmarkedChapterCard({
@@ -48,7 +47,7 @@ class BookmarkedChapterCard extends ConsumerWidget {
         contentPadding: const EdgeInsets.symmetric(horizontal: 17),
         leading: Text(
           cardTitle(),
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
         trailing: GestureDetector(
           onTap: () async {

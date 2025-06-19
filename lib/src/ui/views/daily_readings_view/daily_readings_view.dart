@@ -17,14 +17,13 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_linkify/flutter_linkify.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:url_launcher/url_launcher.dart';
-
 import 'package:elisha/src/models/daily_reading.dart';
 import 'package:elisha/src/models/reading.dart';
 import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
 import 'package:elisha/src/ui/views/daily_readings_view/components/daily_readings_view_header.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DailyReadingsView extends ConsumerWidget {
   const DailyReadingsView(this.dailyReading, {Key? key}) : super(key: key);
@@ -69,14 +68,14 @@ class DailyReadingsView extends ConsumerWidget {
     List<Widget> children = [
       Text(
         dailyReading.name!,
-        style: Theme.of(context).textTheme.headline3?.copyWith(
+        style: Theme.of(context).textTheme.displaySmall?.copyWith(
               fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
             ),
       ),
       const SizedBox(height: 5),
       Text(
         'Lectionary: ' + dailyReading.lectionary!,
-        style: Theme.of(context).textTheme.headline6?.copyWith(
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
               color: Theme.of(context).colorScheme.secondaryContainer,
               fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
             ),
@@ -111,8 +110,8 @@ class DailyReadingsView extends ConsumerWidget {
           },
           text:
               'Daily Readings is courtesy of the United States Conference of Catholic Bishops © 2022. Their Website is located at https://bible.usccb.org/bible/readings',
-          style: Theme.of(context).textTheme.headline6,
-          linkStyle: Theme.of(context).textTheme.headline6?.copyWith(
+          style: Theme.of(context).textTheme.titleLarge,
+          linkStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
                 color: Theme.of(context).colorScheme.onPrimary,
                 decoration: TextDecoration.underline,
               ),
@@ -130,7 +129,7 @@ class DailyReadingsView extends ConsumerWidget {
           children: [
             Text(
               reading.name!,
-              style: Theme.of(context).textTheme.headline4?.copyWith(
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                     fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
                   ),
             ),
@@ -138,7 +137,7 @@ class DailyReadingsView extends ConsumerWidget {
             Expanded(
               child: Text(
                 reading.snippetAddress!,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Theme.of(context).colorScheme.secondaryContainer,
                       fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
                     ),
@@ -149,7 +148,7 @@ class DailyReadingsView extends ConsumerWidget {
         const Divider(height: 20),
         Text(
           reading.text!,
-          style: Theme.of(context).textTheme.headline5?.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
                 fontWeight: FontWeight.w400,
                 fontSize: ref.watch(readerSettingsRepositoryProvider).bodyTextSize * 1.3,

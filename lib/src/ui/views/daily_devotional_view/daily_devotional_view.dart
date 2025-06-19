@@ -17,13 +17,12 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
+import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
+import 'package:elisha/src/ui/views/daily_devotional_view/components/daily_devotional_view_header.dart';
 import 'package:flutter_html/flutter_html.dart' as htm;
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
-import 'package:elisha/src/ui/views/daily_devotional_view/components/daily_devotional_view_header.dart';
 
 class DailyDevotionalView extends ConsumerWidget {
   const DailyDevotionalView({Key? key, required this.htmlData}) : super(key: key);
@@ -99,8 +98,8 @@ class DailyDevotionalView extends ConsumerWidget {
                     },
                     text:
                         'Daily Devotional is courtesy of © 2022 DAILY SCRIPTURE READINGS AND MEDITATIONS. Their Website is located at https://www.dailyscripture.net/daily-meditation/',
-                    style: Theme.of(context).textTheme.headline6,
-                    linkStyle: Theme.of(context).textTheme.headline6?.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge,
+                    linkStyle: Theme.of(context).textTheme.titleLarge?.copyWith(
                           color: Theme.of(context).colorScheme.onPrimary,
                           decoration: TextDecoration.underline,
                         ),

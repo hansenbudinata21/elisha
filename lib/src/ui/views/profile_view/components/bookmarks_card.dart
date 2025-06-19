@@ -17,9 +17,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/ui/views/bookmarked_chapters_view/bookmarked_chapters_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BookmarksCard extends ConsumerWidget {
   const BookmarksCard({
@@ -45,7 +44,7 @@ class BookmarksCard extends ConsumerWidget {
             children: [
               Text(
                 'Bookmarks',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               const Icon(Iconsax.arrow_right_3),
             ],

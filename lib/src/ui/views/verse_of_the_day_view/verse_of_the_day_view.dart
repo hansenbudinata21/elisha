@@ -16,16 +16,14 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import 'package:flutter/services.dart';
-
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-
 import 'package:elisha/src/models/verse.dart';
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
 import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
 import 'package:elisha/src/providers/study_tools_repository_provider.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class VerseOfTheDayView extends ConsumerStatefulWidget {
   const VerseOfTheDayView({Key? key, required this.verses}) : super(key: key);
@@ -150,7 +148,7 @@ class _VerseOfTheDayViewState extends ConsumerState<VerseOfTheDayView> {
           padding: const EdgeInsets.symmetric(vertical: kSmallPadding),
           child: Text(
             'Verse of the Day',
-            style: Theme.of(context).textTheme.headline4?.copyWith(
+            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                   color: CantonColors.white,
                   fontSize: 17,
                 ),
@@ -183,7 +181,7 @@ class _VerseOfTheDayViewState extends ConsumerState<VerseOfTheDayView> {
 
       return SelectableText(
         widget.verses[0].book.name! + ' ' + widget.verses[0].chapterId.toString() + ':' + versesString(),
-        style: Theme.of(context).textTheme.headline6?.copyWith(
+        style: Theme.of(context).textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w500,
               height: ref.watch(readerSettingsRepositoryProvider.notifier).bodyTextHeight,
               fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
@@ -203,7 +201,7 @@ class _VerseOfTheDayViewState extends ConsumerState<VerseOfTheDayView> {
                 child: SelectableText.rich(
                   TextSpan(
                     text: verse.verseId.toString() + ' ',
-                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondaryContainer,
                           fontSize: ref.watch(readerSettingsRepositoryProvider).verseNumberSize * 1.5,
                           height: ref.watch(readerSettingsRepositoryProvider).verseNumberHeight,
@@ -212,7 +210,7 @@ class _VerseOfTheDayViewState extends ConsumerState<VerseOfTheDayView> {
                     children: [
                       TextSpan(
                         text: (verse.text + (widget.verses.last == verse ? '' : ' ')),
-                        style: Theme.of(context).textTheme.headline5!.copyWith(
+                        style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                               fontWeight: FontWeight.w400,
                               fontSize: ref.watch(readerSettingsRepositoryProvider.notifier).bodyTextSize * 1.5,
                               height: ref.watch(readerSettingsRepositoryProvider.notifier).bodyTextHeight,
@@ -227,9 +225,7 @@ class _VerseOfTheDayViewState extends ConsumerState<VerseOfTheDayView> {
             const SizedBox(height: kDefaultPadding),
             _bookChapterVerse(context),
             const SizedBox(height: kDefaultPadding * 3),
-            Container(
-              padding: const EdgeInsets.only(bottom: 10)
-            ),
+            Container(padding: const EdgeInsets.only(bottom: 10)),
           ],
         ),
       ),

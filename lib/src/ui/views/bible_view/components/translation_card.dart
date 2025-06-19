@@ -17,10 +17,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/models/translation.dart';
 import 'package:elisha/src/providers/last_translation_book_chapter_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class TranslationCard extends ConsumerWidget {
   const TranslationCard({
@@ -56,13 +55,13 @@ class TranslationCard extends ConsumerWidget {
         contentPadding: const EdgeInsets.symmetric(vertical: 3, horizontal: 17),
         title: Text(
           translation.name!,
-          style: Theme.of(context).textTheme.headline6?.copyWith(
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontSize: Responsive.isTablet(context) ? 21 : null,
               ),
         ),
         trailing: Text(
           translation.abbreviation!.toUpperCase(),
-          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: Theme.of(context).colorScheme.secondaryContainer,
                 fontSize: Responsive.isTablet(context) ? 18 : null,
               ),

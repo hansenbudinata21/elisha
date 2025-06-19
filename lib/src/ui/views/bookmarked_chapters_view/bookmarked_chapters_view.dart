@@ -17,12 +17,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/models/chapter.dart';
 import 'package:elisha/src/providers/study_tools_repository_provider.dart';
 import 'package:elisha/src/ui/views/bookmarked_chapters_view/components/bookmarked_chapter_card.dart';
 import 'package:elisha/src/ui/views/bookmarked_chapters_view/components/bookmarked_chapters_view_header.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class BookmarkedChaptersView extends ConsumerStatefulWidget {
   const BookmarkedChaptersView({Key? key}) : super(key: key);
@@ -81,7 +80,7 @@ class _BookmarkedChaptersViewState extends ConsumerState<BookmarkedChaptersView>
           : Center(
               child: Text(
                 'No Bookmarked Chapters',
-                style: Theme.of(context).textTheme.headline5?.copyWith(
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                       color: Theme.of(context).colorScheme.secondaryContainer,
                     ),
               ),
@@ -112,7 +111,7 @@ class _BookmarkedChaptersViewState extends ConsumerState<BookmarkedChaptersView>
                     children: [
                       Text(
                         'Options',
-                        style: Theme.of(context).textTheme.headline5,
+                        style: Theme.of(context).textTheme.headlineSmall,
                       ),
                     ],
                   ),

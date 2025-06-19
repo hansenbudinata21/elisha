@@ -33,7 +33,7 @@ class ErrorCard extends ConsumerWidget {
       child: Center(
         child: Text(
           'Connect to internet to access this',
-          style: Theme.of(context).textTheme.headline5,
+          style: Theme.of(context).textTheme.headlineSmall,
           textAlign: TextAlign.center,
         ),
       ),

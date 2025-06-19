@@ -16,20 +16,18 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
-import 'package:flutter/services.dart';
-
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-
 import 'package:elisha/src/models/verse.dart';
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
+import 'package:elisha/src/providers/reader_settings_repository_provider.dart';
 import 'package:elisha/src/providers/study_tools_repository_provider.dart';
 import 'package:elisha/src/providers/verse_of_the_day_future_provider.dart';
 import 'package:elisha/src/ui/components/error_card.dart';
 import 'package:elisha/src/ui/components/loading_card.dart';
 import 'package:elisha/src/ui/views/verse_of_the_day_view/verse_of_the_day_view.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class VerseOfTheDayCard extends ConsumerStatefulWidget {
   const VerseOfTheDayCard({Key? key}) : super(key: key);
@@ -145,7 +143,7 @@ class _VerseOfTheDayCardState extends ConsumerState<VerseOfTheDayCard> {
   Widget _header(BuildContext context, Color bgColor) {
     return Text(
       'Verse of the Day',
-      style: Theme.of(context).textTheme.headline4?.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 
@@ -221,7 +219,7 @@ class _VerseOfTheDayCardState extends ConsumerState<VerseOfTheDayCard> {
               verseText(),
               overflow: TextOverflow.ellipsis,
               maxLines: 5,
-              style: Theme.of(context).textTheme.headline5?.copyWith(
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     color: _verses == null ? Theme.of(context).colorScheme.error : null,
                     fontFamily: ref.watch(readerSettingsRepositoryProvider).typeFace,
                     fontSize: ref.watch(readerSettingsRepositoryProvider).bodyTextSize * 1.3,
@@ -254,7 +252,7 @@ class _VerseOfTheDayCardState extends ConsumerState<VerseOfTheDayCard> {
       _verses == null
           ? 'Matthew 28:20'
           : _verses![0].book.name! + ' ' + _verses![0].chapterId.toString() + ':' + versesString(),
-      style: Theme.of(context).textTheme.headline6?.copyWith(fontWeight: FontWeight.w500),
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),
     );
   }
 }

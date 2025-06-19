@@ -18,20 +18,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
-
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
-import 'package:introduction_screen/introduction_screen.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-
 import 'package:elisha/src/models/local_user.dart';
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
 import 'package:elisha/src/ui/views/current_view.dart';
 import 'package:elisha/src/ui/views/introduction_view/components/birth_date_input.dart';
 import 'package:elisha/src/ui/views/introduction_view/components/first_name_input.dart';
 import 'package:elisha/src/ui/views/introduction_view/components/last_name_input.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class IntroductionView extends ConsumerStatefulWidget {
   const IntroductionView({Key? key}) : super(key: key);
@@ -107,7 +105,7 @@ class _IntroductionViewState extends ConsumerState<IntroductionView> {
           ),
           child: Text(
             'Next',
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
           ),
@@ -120,7 +118,7 @@ class _IntroductionViewState extends ConsumerState<IntroductionView> {
           ),
           child: Text(
             'Next',
-            style: Theme.of(context).textTheme.button?.copyWith(
+            style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
           ),
@@ -206,12 +204,12 @@ class _WelcomeViewState extends ConsumerState<WelcomeView> {
           children: [
             Text(
               'Welcome to Elisha',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
             const SizedBox(height: 10),
             Text(
               'Please fill out the following fields.',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
           ],
         ),
@@ -229,7 +227,7 @@ class _WelcomeViewState extends ConsumerState<WelcomeView> {
         _validate
             ? Text(
                 'Please fill out the remaining fields',
-                style: Theme.of(context).textTheme.headline6?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Theme.of(context).colorScheme.error,
                     ),
               )
@@ -250,12 +248,12 @@ class _WelcomeViewState extends ConsumerState<WelcomeView> {
           children: [
             Text(
               'Welcome to Elisha',
-              style: Theme.of(context).textTheme.headline4?.copyWith(fontSize: 27),
+              style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontSize: 27),
             ),
             const SizedBox(height: 10),
             Text(
               'Please fill out the following fields.',
-              style: Theme.of(context).textTheme.headline6?.copyWith(fontSize: 24),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 24),
             ),
           ],
         ),
@@ -282,7 +280,7 @@ class _WelcomeViewState extends ConsumerState<WelcomeView> {
         _validate
             ? Text(
                 'Please fill out the remaining fields',
-                style: Theme.of(context).textTheme.headline6?.copyWith(
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       color: Theme.of(context).colorScheme.error,
                     ),
               )
@@ -317,7 +315,7 @@ class _WelcomeViewState extends ConsumerState<WelcomeView> {
                   padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 27),
                   child: Text(
                     'Select Your Birthday',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
                 SizedBox(

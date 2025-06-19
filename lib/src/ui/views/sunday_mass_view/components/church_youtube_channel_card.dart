@@ -17,12 +17,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/models/youtube_channel.dart';
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
 import 'package:elisha/src/providers/youtube_fetch_channel_future_provider.dart';
 import 'package:elisha/src/providers/youtube_fetch_latest_church_video_future_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class ChurchYouTubeChannelCard extends ConsumerWidget {
   const ChurchYouTubeChannelCard({
@@ -126,13 +125,13 @@ class ChurchYouTubeChannelCard extends ConsumerWidget {
                   children: [
                     Text(
                       channelName(),
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
                     Text(
                       description(),
-                      style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             color: !nowPlaying ? Theme.of(context).colorScheme.secondaryContainer : null,
                           ),
                       overflow: TextOverflow.ellipsis,

@@ -16,12 +16,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import 'package:flutter/services.dart';
-
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
-
 import 'package:elisha/src/models/youtube_channel.dart';
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
 import 'package:elisha/src/providers/sunday_mass_service_provider.dart';
@@ -29,6 +24,8 @@ import 'package:elisha/src/providers/youtube_fetch_channel_future_provider.dart'
 import 'package:elisha/src/providers/youtube_fetch_latest_church_video_future_provider.dart';
 import 'package:elisha/src/ui/views/sunday_mass_view/components/church_youtube_channel_card.dart';
 import 'package:elisha/src/ui/views/sunday_mass_view/components/sunday_mass_view_header.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 class SundayMassView extends ConsumerStatefulWidget {
   const SundayMassView({Key? key}) : super(key: key);
@@ -62,7 +59,7 @@ class _SundayMassViewState extends ConsumerState<SundayMassView> {
               Expanded(
                 child: Text(
                   'Cannot access Church at this time. Remember Jesus loves you!',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
             ],
@@ -94,13 +91,11 @@ class _SundayMassViewState extends ConsumerState<SundayMassView> {
           ),
         );
 
-
         final _ytPlayer = YoutubePlayer(controller: _ytController);
 
         return ListView.builder(
           itemCount: channelIds.length + _uiElementCount,
           itemBuilder: (context, index) {
-
             switch (index) {
               case 0:
                 return const SundayMassViewHeader();
@@ -112,7 +107,7 @@ class _SundayMassViewState extends ConsumerState<SundayMassView> {
                 return const SizedBox(height: kMediumPadding);
 
               case 3:
-                return Text('Other Church Services', style: Theme.of(context).textTheme.headline5);
+                return Text('Other Church Services', style: Theme.of(context).textTheme.headlineSmall);
 
               case 4:
                 return const SizedBox(height: kSmallPadding);

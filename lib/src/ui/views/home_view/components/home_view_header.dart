@@ -17,9 +17,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/providers/local_user_repository_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HomeViewHeader extends ConsumerWidget {
   const HomeViewHeader({Key? key}) : super(key: key);
@@ -51,7 +50,7 @@ class HomeViewHeader extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 30),
         child: Text(
           'Good ' + greeting() + ', ' + (dbName != '' ? name(dbName) : ''),
-          style: Theme.of(context).textTheme.headline2?.copyWith(letterSpacing: 0.1),
+          style: Theme.of(context).textTheme.displayMedium?.copyWith(letterSpacing: 0.1),
         ),
       ),
     );

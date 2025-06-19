@@ -17,12 +17,11 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:elisha/src/providers/daily_readings_future_provider.dart';
 import 'package:elisha/src/ui/components/error_card.dart';
 import 'package:elisha/src/ui/components/loading_card.dart';
 import 'package:elisha/src/ui/views/daily_readings_view/daily_readings_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DailyReadingsCard extends ConsumerWidget {
   const DailyReadingsCard({
@@ -54,12 +53,12 @@ class DailyReadingsCard extends ConsumerWidget {
                 children: [
                   Text(
                     'Daily Readings',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.headlineMedium,
                   ),
                   const SizedBox(height: 7),
                   Text(
                     'SCRIPTURES FOR TODAY\'S SERVICE',
-                    style: Theme.of(context).textTheme.overline?.copyWith(
+                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
                           letterSpacing: 2,
                           fontWeight: FontWeight.w500,
                           color: Theme.of(context).primaryColor,
@@ -71,7 +70,7 @@ class DailyReadingsCard extends ConsumerWidget {
                       Expanded(
                         child: Text(
                           'Join Mass today by reading the scriptures for ${dailyReading.name}.',
-                          style: Theme.of(context).textTheme.bodyText1,
+                          style: Theme.of(context).textTheme.bodyLarge,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),

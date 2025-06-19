@@ -48,7 +48,7 @@ class AboutCard extends ConsumerWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             'About',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
       ),

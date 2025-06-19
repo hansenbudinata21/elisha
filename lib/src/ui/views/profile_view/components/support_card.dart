@@ -46,7 +46,7 @@ class SupportCard extends ConsumerWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             'Support',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
       ),

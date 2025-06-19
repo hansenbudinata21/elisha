@@ -42,7 +42,7 @@ class ReaderSettingsCard extends ConsumerWidget {
           alignment: Alignment.centerLeft,
           child: Text(
             'Adjust Reader Settings',
-            style: Theme.of(context).textTheme.headline6,
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ),
       ),
@@ -91,7 +91,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Text Size', style: Theme.of(context).textTheme.headline5),
+                    Text('Text Size', style: Theme.of(context).textTheme.headlineSmall),
                     const Spacer(),
                     GestureDetector(
                       onTap: () async {
@@ -110,7 +110,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                         child: Text(
                           'A',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline6?.copyWith(
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontSize: 16,
                                 height: 1.25,
                                 color: Theme.of(context).colorScheme.onBackground,
@@ -136,7 +136,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                         child: Text(
                           'A',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headline6?.copyWith(
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                 fontSize: 24,
                                 height: 1.25,
                                 color: Theme.of(context).colorScheme.onBackground,
@@ -153,7 +153,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                 iconColor: Theme.of(context).colorScheme.primary,
                 title: Text(
                   ref.watch(readerSettingsRepositoryProvider).typeFace,
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 children: [
                   Column(
@@ -167,7 +167,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
                             'New York',
-                            style: Theme.of(context).textTheme.headline4?.copyWith(
+                            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                                   fontFamily: 'New York',
                                 ),
                           ),
@@ -183,7 +183,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           child: Text(
                             'Inter',
-                            style: Theme.of(context).textTheme.headline4?.copyWith(
+                            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                                   fontFamily: 'Inter',
                                 ),
                           ),
@@ -199,7 +199,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Line Spacing', style: Theme.of(context).textTheme.headline5),
+                    Text('Line Spacing', style: Theme.of(context).textTheme.headlineSmall),
                     const Spacer(),
                     GestureDetector(
                       onTap: () async {
@@ -250,7 +250,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                       children: [
                         Text(
                           '20',
-                          style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                                 color: Theme.of(context).colorScheme.secondaryContainer,
                                 fontSize: ref.watch(readerSettingsRepositoryProvider).verseNumberSize * 1.1,
                                 height: ref.watch(readerSettingsRepositoryProvider).verseNumberHeight,
@@ -278,7 +278,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                     children: [
                       Text(
                         'Example Text',
-                        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               color: Theme.of(context).colorScheme.secondaryContainer,
                             ),
                       ),
@@ -286,7 +286,7 @@ class ReaderSettingsCard extends ConsumerWidget {
                         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
                         child: Text.rich(
                           TextSpan(children: spans),
-                          style: Theme.of(context).textTheme.headline5!.copyWith(
+                          style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                                 fontWeight: FontWeight.w400,
                                 fontSize: ref.watch(readerSettingsRepositoryProvider.notifier).bodyTextSize * 1.4,
                                 height: ref.watch(readerSettingsRepositoryProvider.notifier).bodyTextHeight * 1.1,

@@ -17,11 +17,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
 import 'package:canton_ui/canton_ui.dart';
+import 'package:elisha/src/providers/daily_devotional_service_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'package:elisha/src/providers/daily_devotional_service_provider.dart';
 
 class DailyDevotionalCard extends ConsumerStatefulWidget {
   const DailyDevotionalCard({Key? key}) : super(key: key);
@@ -130,7 +129,7 @@ class _DailyDevotionalCardState extends ConsumerState<DailyDevotionalCard> {
   Widget _header(BuildContext context, Color bgColor) {
     return Text(
       'Daily Devotional',
-      style: Theme.of(context).textTheme.headline4?.copyWith(fontWeight: FontWeight.bold),
+      style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
     );
   }
 
@@ -147,7 +146,7 @@ class _DailyDevotionalCardState extends ConsumerState<DailyDevotionalCard> {
                 'Learn and Meditate on God\'s Word daily',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
-                style: Theme.of(context).textTheme.headline5?.copyWith(
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
                       fontWeight: FontWeight.w500,
                     ),
               ),

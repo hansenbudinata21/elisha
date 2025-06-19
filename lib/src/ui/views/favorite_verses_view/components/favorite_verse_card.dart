@@ -16,14 +16,12 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import 'package:flutter/services.dart';
-
 import 'package:canton_ui/canton_ui.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-
 import 'package:elisha/src/models/verse.dart';
 import 'package:elisha/src/providers/study_tools_repository_provider.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class FavoriteVerseCard extends ConsumerStatefulWidget {
   const FavoriteVerseCard({Key? key, required this.verse}) : super(key: key);
@@ -106,12 +104,12 @@ class _FavoriteVerseCardState extends ConsumerState<FavoriteVerseCard> {
               children: [
                 Text(
                   cardTitle(),
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 const SizedBox(height: 7),
                 Text(
                   widget.verse.text,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
